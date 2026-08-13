@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "environment": {
+    "max_steps": 200,
+    "fault_probability": 0.05,
+    "fault_timeout": 8
+  },
+  "ppo": {
+    "learning_rate": 0.0003,
+    "n_steps": 2048,
+    "batch_size": 64,
+    "n_epochs": 10,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2
+  },
+  "total_timesteps": 200000,
+  "held_out_episodes": 20
+}
