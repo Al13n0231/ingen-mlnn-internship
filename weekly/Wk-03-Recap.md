@@ -1,0 +1,11 @@
+# Week 3 Recap — Multimodal Sensor Fusion for Companion AI
+
+This week I adapted a three-modality analysis pipeline to a companion robot context based on Fari. The implementation combined audio MFCC features, synthetic facial geometry features, and MiniLM sentence embeddings into a single early fusion representation. A logistic regression classifier was then evaluated on a held out test set for a synthetic distress-versus-normal interaction task.
+
+The ablation analysis showed that **visual and text features tied as the strongest individual modalities**, with both achieving an F1 score of **1.000** and an AUROC of **1.000**. Audio alone achieved an F1 score of **0.875** and an AUROC of **0.984**. The complete multimodal classifier also achieved an F1 score of **1.000** and an AUROC of **1.000**, meaning that fusion matched the strongest individual modalities rather than improving beyond them in this synthetic experiment.
+
+From a cognitive science perspective, this ordering should not automatically be interpreted as the natural ordering of importance in human communication. The experiment uses synthetic class-generation rules, so the measured contribution of each modality partly reflects how much class information was intentionally encoded in each synthetic distribution. In real human interaction, audio, facial behavior, language, context, and prior interaction history can provide complementary or even conflicting evidence.
+
+The experiment nevertheless illustrates why multimodal sensing is valuable for a companion robot. Language captures the semantic content of what a person says, while audio and visual signals provide information about how that message is expressed. A theory-of-mind perspective is relevant because the robot ultimately wants to reason about an underlying human state rather than merely recognize observable words or facial features.
+
+The main lesson from Week 3 is therefore not that one sensor should universally dominate the others. Instead, companion AI should combine multiple sources of evidence, model uncertainty, and use classification results to support cautious human-centered interaction decisions rather than treating model outputs as definitive conclusions about a user's mental state.
